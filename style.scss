@@ -2,4 +2,34 @@ body {
   font-family: "Montserrat", sans-serif;
   background-color: #fff;
   color: pink;
+  margin: auto;
+}
+
+.icon {
+  width: 30px;
+}
+
+.employee-card {
+  border: 1px solid black;
+}
+
+.main-section  {
+}
+
+#employee-container {
+  margin: 0 60px;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 668px) {
+  #employee-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  #employee-container {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
 }

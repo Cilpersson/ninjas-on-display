@@ -2,4 +2,35 @@ body {
   font-family: "Montserrat", sans-serif;
   background-color: #fff;
   color: pink;
+  margin: auto;
+}
+
+.icon {
+  width: 30px;
+}
+
+.employee-card {
+  border: 1px solid black;
+}
+
+#employee-container {
+  margin: 0 60px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+}
+
+@media (min-width: 668px) {
+  #employee-container {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  #employee-container {
+    -ms-grid-columns: 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
 }
