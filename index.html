@@ -18,28 +18,31 @@
   <section id="main-section" class="main-section">
     <section id="sorting-container">
 
-      <select id="office" class="office">
-        <option value="none">Select an office location</option>
-        <option value="Lund">LUND</option>
-        <option value="Helsingborg">HELSINGBORG</option>
-        <option value="Stockholm">STOCKHOLM</option>
-        <option value="Borlänge">BORLÄNGE</option>
-        <option value="Ljubljana">LJUBLJANA</option>
-      </select>
-
       <fieldset class="radio-btn-container">
         <legend>Select social media to sort among the ninjas</legend>
-        <form id="checkbox" class="checkbox">
-          <input class="social-media" type="checkbox" id="gitHub" value="gitHub"><label for="gitHub">GITHUB</label>
 
-          <input class="social-media" type="checkbox" id="twitter" value="twitter"><label for="twitter">TWITTER</label>
+        <select id="office" class="office">
+          <option value="none">Select an office location</option>
+          <option value="Lund">LUND</option>
+          <option value="Helsingborg">HELSINGBORG</option>
+          <option value="Stockholm">STOCKHOLM</option>
+          <option value="Borlänge">BORLÄNGE</option>
+          <option value="Ljubljana">LJUBLJANA</option>
+        </select>
 
-          <input class="social-media" type="checkbox" id="linkedIn" value="linkedIn"><label
-            for="linkedIn">LINKEDIN</label>
+        <input class="social-media" type="checkbox" id="gitHub" value="gitHub">
+        <label for="gitHub">GITHUB</label>
 
-          <input class="social-media" type="checkbox" id="stackOverflow" value="stackOverflow"><label
-            for="stackOverflow">STACKOVERFLOW</label>
-        </form>
+        <input class="social-media" type="checkbox" id="twitter" value="twitter"><label for="twitter">TWITTER</label>
+
+        <input class="social-media" type="checkbox" id="linkedIn" value="linkedIn"><label
+          for="linkedIn">LINKEDIN</label>
+
+        <input class="social-media" type="checkbox" id="stackOverflow" value="stackOverflow"><label
+          for="stackOverflow">STACKOVERFLOW</label>
+        <button id="filter-button">Filter</button>
+        <button id="reset-button">Reset</button>
+
       </fieldset>
 
     </section>

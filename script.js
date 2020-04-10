@@ -1,5 +1,17 @@
 const employeeContainer = document.getElementById("employee-container");
 const cityPick = document.querySelector(".office");
+const github = document.getElementById("gitHub");
+const twitter = document.getElementById("twitter");
+const linkedin = document.getElementById("linkedIn");
+const stackoverflow = document.getElementById("stackOverflow");
+const lund = document.getElementById("lund");
+const helsingborg = document.getElementById("helsingborg");
+const borlange = document.getElementById("borlange");
+const stockholm = document.getElementById("stockholm");
+const ljubljana = document.getElementById("ljubljana");
+const filterButton = document.getElementById("filter-button");
+const resetButton = document.getElementById("reset-button");
+const checkboxValues = [github, twitter, linkedin, stackoverflow];
 
 fetch("https://api.tretton37.com/ninjas")
   .then((res) => {
@@ -7,10 +19,11 @@ fetch("https://api.tretton37.com/ninjas")
   })
   .then((json) => {
     let employeeList = json;
+    let filteredEmployeeList = json;
 
-    const showEmployees = () => {
+    const showEmployees = (employees) => {
       employeeContainer.innerHTML = "";
-      employeeList.map((employee) => {
+      employees.forEach((employee) => {
         employeeContainer.innerHTML += `
         <div class="employee-card">
           <img src=${employee.imagePortraitUrl}>
@@ -42,17 +55,57 @@ fetch("https://api.tretton37.com/ninjas")
     };
 
     const filterByOffice = () => {
-      employeeList = employeeList.filter(
+      filteredEmployeeList = employeeList.filter(
         (employee) => employee.office === cityPick.value
       );
-      employeeList = employeeList.sort((a, b) => a.name.localeCompare(b.name));
-      showEmployees();
-      employeeList = json;
+      filteredEmployeeList = filteredEmployeeList.sort((a, b) =>
+        a.name.localeCompare(b.name)
+      );
+      showEmployees(filteredEmployeeList);
+    };
+
+    const resetFilters = () => {
+      filteredEmployeeList = employeeList;
+      checkboxValues.forEach((checkbox) => {
+        checkbox.checked = false;
+      });
+      cityPick.selectedIndex = 0;
+      showEmployees(employeeList);
+    };
+
+    const filterBySocialMedia = () => {
+      if (github.checked) {
+        filteredEmployeeList = filteredEmployeeList.filter(
+          (employee) => employee.gitHub !== null
+        );
+      }
+      if (twitter.checked) {
+        filteredEmployeeList = filteredEmployeeList.filter(
+          (employee) => employee.twitter !== null
+        );
+      }
+      if (linkedin.checked) {
+        filteredEmployeeList = filteredEmployeeList.filter(
+          (employee) => employee.linkedIn !== null
+        );
+      }
+      if (stackoverflow.checked) {
+        filteredEmployeeList = filteredEmployeeList.filter(
+          (employee) => employee.stackOverflow !== null
+        );
+      }
+      filteredEmployeeList = filteredEmployeeList.sort((a, b) =>
+        a.name.localeCompare(b.name)
+      );
+      showEmployees(filteredEmployeeList);
     };
 
     if (cityPick) {
       cityPick.addEventListener("change", filterByOffice);
     }
+    filterButton.addEventListener("click", filterBySocialMedia);
 
-    showEmployees();
+    resetButton.addEventListener("click", resetFilters);
+
+    showEmployees(employeeList);
   });
