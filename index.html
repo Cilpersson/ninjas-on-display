@@ -10,14 +10,43 @@
 </head>
 
 <body>
+
   <header>
     <h1>THE NINJAS</h1>
   </header>
+
   <section id="main-section" class="main-section">
-    <div id="sorting-container"></div>
+    <section id="sorting-container">
+
+      <select id="office" class="office">
+        <option value="none">Select an office location</option>
+        <option value="Lund">LUND</option>
+        <option value="Helsingborg">HELSINGBORG</option>
+        <option value="Stockholm">STOCKHOLM</option>
+        <option value="Borlänge">BORLÄNGE</option>
+        <option value="Ljubljana">LJUBLJANA</option>
+      </select>
+
+      <fieldset class="radio-btn-container">
+        <legend>Select social media to sort among the ninjas</legend>
+        <form id="checkbox" class="checkbox">
+          <input class="social-media" type="checkbox" id="gitHub" value="gitHub"><label for="gitHub">GITHUB</label>
+
+          <input class="social-media" type="checkbox" id="twitter" value="twitter"><label for="twitter">TWITTER</label>
+
+          <input class="social-media" type="checkbox" id="linkedIn" value="linkedIn"><label
+            for="linkedIn">LINKEDIN</label>
+
+          <input class="social-media" type="checkbox" id="stackOverflow" value="stackOverflow"><label
+            for="stackOverflow">STACKOVERFLOW</label>
+        </form>
+      </fieldset>
+
+    </section>
     <section id="employee-container"></section>
   </section>
   <script src="script.js"></script>
+
 </body>
 
 </html>
