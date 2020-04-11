@@ -12,7 +12,7 @@ const stackoverflow = document.getElementById("stackOverflow");
 const filterButton = document.getElementById("filter-button");
 const resetButton = document.getElementById("reset-button");
 const checkboxValues = [github, twitter, linkedin, stackoverflow];
-const loader = `<div class="loading-container"><div class="loader"></div></div>`;
+const loader = `<div class="loading-container"><div class="loader"><img class="loading-shuriken" src="./icons/shuriken.svg"></div></div>`;
 
 employeeContainer.innerHTML = loader;
 fetch("https://api.tretton37.com/ninjas")
