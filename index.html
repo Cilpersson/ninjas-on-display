@@ -5,7 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+
   <title>Document</title>
 </head>
 
@@ -13,40 +14,29 @@
 
   <header>
     <h1>THE NINJAS</h1>
+    <img src="./icons/ninja.svg" alt="">
   </header>
+  <section class="main-content">
+    <section class="sorting-container" id="sorting-container">
+      <select id="office" class="office">
+        <option value="none">Select an office location</option>
+        <option value="Lund">LUND</option>
+        <option value="Helsingborg">HELSINGBORG</option>
+        <option value="Stockholm">STOCKHOLM</option>
+        <option value="Borlänge">BORLÄNGE</option>
+        <option value="Ljubljana">LJUBLJANA</option>
+      </select>
 
-  <section id="main-section" class="main-section">
-    <section id="sorting-container">
 
-      <fieldset class="radio-btn-container">
-        <legend>Select social media to sort among the ninjas</legend>
-
-        <select id="office" class="office">
-          <option value="none">Select an office location</option>
-          <option value="Lund">LUND</option>
-          <option value="Helsingborg">HELSINGBORG</option>
-          <option value="Stockholm">STOCKHOLM</option>
-          <option value="Borlänge">BORLÄNGE</option>
-          <option value="Ljubljana">LJUBLJANA</option>
-        </select>
-
-        <input class="social-media" type="checkbox" id="gitHub" value="gitHub">
-        <label for="gitHub">GITHUB</label>
-
-        <input class="social-media" type="checkbox" id="twitter" value="twitter"><label for="twitter">TWITTER</label>
-
-        <input class="social-media" type="checkbox" id="linkedIn" value="linkedIn"><label
-          for="linkedIn">LINKEDIN</label>
-
-        <input class="social-media" type="checkbox" id="stackOverflow" value="stackOverflow"><label
-          for="stackOverflow">STACKOVERFLOW</label>
-        <button id="filter-button">Filter</button>
-        <button id="reset-button">Reset</button>
-
-      </fieldset>
-
+      <label for="gitHub">GITHUB</label>
+      <input class="social-media" type="checkbox" id="twitter" value="twitter"><label for="twitter">TWITTER</label>
+      <input class="social-media" type="checkbox" id="linkedIn" value="linkedIn"><label for="linkedIn">LINKEDIN</label>
+      <input class="social-media" type="checkbox" id="stackOverflow" value="stackOverflow"><label
+        for="stackOverflow">STACKOVERFLOW</label>
+      <button id="filter-button">Filter</button>
+      <button id="reset-button">Reset</button>
     </section>
-    <section id="employee-container"></section>
+    <section id="employee-container" class="employee-container"></section>
   </section>
   <script src="script.js"></script>
 
@@ -55,3 +45,6 @@
 </html>
 
 <!-- Icons made by <a href="https://www.flaticon.com/authors/dave-gandy" title="Dave Gandy">Dave Gandy</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a> -->
+
+<!-- Ninja header
+Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a> -->

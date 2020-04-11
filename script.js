@@ -4,15 +4,17 @@ const github = document.getElementById("gitHub");
 const twitter = document.getElementById("twitter");
 const linkedin = document.getElementById("linkedIn");
 const stackoverflow = document.getElementById("stackOverflow");
-const lund = document.getElementById("lund");
-const helsingborg = document.getElementById("helsingborg");
-const borlange = document.getElementById("borlange");
-const stockholm = document.getElementById("stockholm");
-const ljubljana = document.getElementById("ljubljana");
+// const lund = document.getElementById("lund");
+// const helsingborg = document.getElementById("helsingborg");
+// const borlange = document.getElementById("borlange");
+// const stockholm = document.getElementById("stockholm");
+// const ljubljana = document.getElementById("ljubljana");
 const filterButton = document.getElementById("filter-button");
 const resetButton = document.getElementById("reset-button");
 const checkboxValues = [github, twitter, linkedin, stackoverflow];
+const loader = `<div class="loading-container"><div class="loader"></div></div>`;
 
+employeeContainer.innerHTML = loader;
 fetch("https://api.tretton37.com/ninjas")
   .then((res) => {
     return res.json();
@@ -26,30 +28,34 @@ fetch("https://api.tretton37.com/ninjas")
       employees.forEach((employee) => {
         employeeContainer.innerHTML += `
         <div class="employee-card">
-          <img src=${employee.imagePortraitUrl}>
-          <h2>${employee.name}</h2>
-          <div class="social-media">
-            ${
-              employee.gitHub
-                ? `<a href="https://github.com/${employee.gitHub}"><img class="icon" src="icons/github.svg" alt="Github logo" ></a>`
-                : ""
-            }
-            ${
-              employee.twitter
-                ? `<a href="https://twitter.com/${employee.twitter}"><img class="icon" src="icons/twitter.svg" alt="Twitter logo"></a>`
-                : ""
-            }
-            ${
-              employee.stackOverflow
-                ? `<a href="https://stackoverflow.com/users/${employee.stackOverflow}"><img class="icon" src="icons/stackoverflow.svg" alt="Stackoverflow logo"></a>`
-                : ""
-            }
-            ${
-              employee.linkedIn
-                ? `<a href="https://www.linkedin.com${employee.linkedIn}"><img class="icon" src="icons/linkedin.svg" alt="Linkedin logo"></a>`
-                : ""
-            }
+        <div class="employee-info">
+          <img class="profile-picture" src=${employee.imagePortraitUrl}>
+          <div class="employee-text">
+            <h2>${employee.name}</h2>
           </div>
+        </div>
+            <div class="social-media">
+              ${
+                employee.gitHub
+                  ? `<a href="https://github.com/${employee.gitHub}"><img class="icon" src="icons/github.svg" alt="Github logo" ></a>`
+                  : ""
+              }
+              ${
+                employee.twitter
+                  ? `<a href="https://twitter.com/${employee.twitter}"><img class="icon" src="icons/twitter.svg" alt="Twitter logo"></a>`
+                  : ""
+              }
+              ${
+                employee.stackOverflow
+                  ? `<a href="https://stackoverflow.com/users/${employee.stackOverflow}"><img class="icon" src="icons/stackoverflow.svg" alt="Stackoverflow logo"></a>`
+                  : ""
+              }
+              ${
+                employee.linkedIn
+                  ? `<a href="https://www.linkedin.com${employee.linkedIn}"><img class="icon" src="icons/linkedin.svg" alt="Linkedin logo"></a>`
+                  : ""
+              }
+            </div>
         </div>`;
       });
     };
@@ -104,7 +110,6 @@ fetch("https://api.tretton37.com/ninjas")
       cityPick.addEventListener("change", filterByOffice);
     }
     filterButton.addEventListener("click", filterBySocialMedia);
-
     resetButton.addEventListener("click", resetFilters);
 
     showEmployees(employeeList);

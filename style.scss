@@ -1,43 +1,116 @@
 body {
-  font-family: "Montserrat", sans-serif;
-  background-color: #fff;
-  color: pink;
-  margin: auto;
+  font-family: "Nunito", sans-serif;
+  color: #012c55;
+  margin: 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background-color: #e4e4e4;
 }
 
 h1 {
+  margin: 0;
 }
+
 h2 {
+  margin: 0;
+  text-align: start;
+  overflow-wrap: break-word;
+  width: fit-content;
 }
 
-header {
+.main-content {
+  // margin: 10px;
+  width: 100%;
+  // background: white;
+  // margin: 0 15px;
+  // display: flex;
+  // flex-direction: column;
 }
 
-.main-section  {
+.sorting-container {
+  margin: 20px;
 }
 
-#employee-container {
-  margin: 0 60px;
-  display: grid;
-  grid-template-columns: 1fr;
+.loading-container {
+  margin-top: 200px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.loader {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  border: 15px solid #012c55;
+  border-top: 15px solid #80c565;
+  animation: spin 2s linear infinite;
+}
+
+.employee-container {
+  margin: 20px;
 }
 
 .employee-card {
-  border: 1px solid black;
+  font-weight: lighter;
+  margin: 10px auto;
+  border: 4px solid #80c565;
+  margin: 10px 0;
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 5px;
+  box-shadow: 4px 4px 0 #012c55;
+  background: #fff;
+  color: #012c55;
+}
+
+.profile-picture {
+  border-radius: 5px;
+  height: 80px;
+}
+
+.social-media {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 
 .icon {
   width: 30px;
+  display: block;
 }
 
 @media (min-width: 668px) {
-  #employee-container {
-    grid-template-columns: 1fr 1fr;
+  .main-content {
+    width: 100%;
+  }
+
+  .employee-card {
+    margin: 10px;
+  }
+
+  .employee-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }
 }
 
 @media (min-width: 1024px) {
-  #employee-container {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+  .sorting-container {
+    margin: 0 200px;
+  }
+  .employee-container {
+    margin: 0 190px;
+  }
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
   }
 }
