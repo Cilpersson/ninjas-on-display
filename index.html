@@ -18,23 +18,41 @@
   </header>
   <section class="main-content">
     <section class="sorting-container" id="sorting-container">
-      <select id="office" class="office">
-        <option value="none">Select an office location</option>
-        <option value="Lund">LUND</option>
-        <option value="Helsingborg">HELSINGBORG</option>
-        <option value="Stockholm">STOCKHOLM</option>
-        <option value="Borlänge">BORLÄNGE</option>
-        <option value="Ljubljana">LJUBLJANA</option>
-      </select>
+      <div class="sorting-wrapper">
+        <select id="office" class="office">
+          <option value="none">Select an office</option>
+          <option value="Lund">LUND</option>
+          <option value="Helsingborg">HELSINGBORG</option>
+          <option value="Stockholm">STOCKHOLM</option>
+          <option value="Borlänge">BORLÄNGE</option>
+          <option value="Ljubljana">LJUBLJANA</option>
+        </select>
+
+        <div class="checkbox-wrapper">
+          <input class="social-media" type="checkbox" id="gitHub" value="github">
+          <label for="gitHub">GITHUB</label>
+        </div>
+        <div class="checkbox-wrapper">
+          <input class="social-media" type="checkbox" id="twitter" value="twitter">
+          <label for="twitter">TWITTER</label>
+        </div>
+        <div class="checkbox-wrapper">
+          <input class="social-media" type="checkbox" id="linkedIn" value="linkedIn">
+          <label for="linkedIn">LINKEDIN</label>
+        </div>
+        <div class="checkbox-wrapper">
+          <input class="social-media" type="checkbox" id="stackOverflow" value="stackOverflow">
+          <label for="stackOverflow">STACKOVERFLOW</label>
+        </div>
+      </div>
 
 
-      <label for="gitHub">GITHUB</label>
-      <input class="social-media" type="checkbox" id="twitter" value="twitter"><label for="twitter">TWITTER</label>
-      <input class="social-media" type="checkbox" id="linkedIn" value="linkedIn"><label for="linkedIn">LINKEDIN</label>
-      <input class="social-media" type="checkbox" id="stackOverflow" value="stackOverflow"><label
-        for="stackOverflow">STACKOVERFLOW</label>
-      <button id="filter-button">Filter</button>
-      <button id="reset-button">Reset</button>
+
+      <div class="button-wrapper">
+        <button class="all-buttons" id="filter-button">Filter</button>
+        <button class="all-buttons" id="reset-button">Reset</button>
+      </div>
+
     </section>
     <section id="employee-container" class="employee-container"></section>
   </section>
