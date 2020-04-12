@@ -268,33 +268,6 @@ select:active {
   transition: 0.4s ease-in;
 }
 
-.employee-card:hover {
-  -webkit-transform: scale(1.5);
-          transform: scale(1.5);
-}
-
-.employee-card:hover .employee-contacts {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  color: #012c55;
-}
-
-.employee-card:focus {
-  -webkit-transform: scale(1.5);
-          transform: scale(1.5);
-}
-
-.employee-card:focus .employee-contacts,
-.employee-contacts:focus,
-.email:focus .employee-contacts,
-.phone-nbr:focus .employee-contacts {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  color: #012c55;
-}
-
 .employee-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -483,6 +456,29 @@ footer span {
   }
   .loading-container {
     width: 75vw;
+  }
+  .employee-card:hover {
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+  }
+  .employee-card:hover .employee-contacts {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    color: #012c55;
+  }
+  .employee-card:focus {
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+  }
+  .employee-card:focus .employee-contacts,
+  .employee-contacts:focus,
+  .email:focus .employee-contacts,
+  .phone-nbr:focus .employee-contacts {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    color: #012c55;
   }
 }
 
