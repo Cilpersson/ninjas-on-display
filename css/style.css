@@ -253,7 +253,6 @@ select:active {
 }
 
 .employee-card {
-  height: 120px;
   font-weight: lighter;
   border: 4px solid #80c565;
   padding: 5px;
@@ -296,7 +295,6 @@ select:active {
           justify-content: space-evenly;
   -webkit-transition: 0.5s ease-in;
   transition: 0.5s ease-in;
-  height: 60px;
 }
 
 .phone-nbr {
