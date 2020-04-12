@@ -246,7 +246,7 @@ select:active {
 }
 
 .employee-contacts {
-  display: none;
+  display: flex;
   color: #012c55;
   flex-direction: column;
   justify-content: space-evenly;
