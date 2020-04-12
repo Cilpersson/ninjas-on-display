@@ -27,36 +27,64 @@ fetch("https://api.tretton37.com/ninjas")
       employeeContainer.innerHTML = "";
       employees.forEach((employee) => {
         employeeContainer.innerHTML += `
-        <div class="employee-card">
-        <div class="employee-info">
-          <img class="profile-picture" src=${employee.imagePortraitUrl}>
-          <div class="employee-text">
-            <h2>${employee.name}</h2>
-          </div>
-        </div>
+        
+          <div tabindex="0" class="employee-card">
+          
+            <div class="employee-info">
+              <div class="employee-wrapper">
+                <img class="profile-picture" src=${
+                  employee.imagePortraitUrl
+                } alt="Profile picture of employee">
+                <div tabindex="0" class="employee-contacts">
+                  <p  class="email">${
+                    employee.email
+                      ? `<a href="mailto:${employee.email}?Subject=Hey%20ninja!" target="_top"><img class="mini-icon" src="icons/paper-plane.svg" alt="Paper plane">  e-mail me!</a>`
+                      : ""
+                  }</p>
+                  <p tabindex="0" class="phone-nbr"> ${
+                    employee.phoneNumber
+                      ? `<img class="mini-icon" src="icons/phone.svg" alt="Paper plane"> ${employee.phoneNumber} `
+                      : ""
+                  }</p>
+
+                  <p class="phone-nbr"><img class="mini-icon" src="icons/office.svg" alt="Office"> ${
+                    employee.office
+                  }</p>
+                  
+                </div>
+              </div>
+              <div class="employee-text">
+                <h2>${employee.name}</h2>
+              </div>
+            </div>
             <div class="social-media">
               ${
                 employee.gitHub
-                  ? `<a href="https://github.com/${employee.gitHub}"><img class="icon" src="icons/github.svg" alt="Github logo" ></a>`
+                  ? `<a href="https://github.com/${employee.gitHub}" target="_blank"><img class="icon" src="icons/github.svg" alt="Github logo"></a>`
                   : ""
               }
               ${
                 employee.twitter
-                  ? `<a href="https://twitter.com/${employee.twitter}"><img class="icon" src="icons/twitter.svg" alt="Twitter logo"></a>`
+                  ? `<a href="https://twitter.com/${employee.twitter}" target="_blank"><img class="icon" src="icons/twitter.svg"
+                  alt="Twitter logo"></a>`
                   : ""
               }
               ${
                 employee.stackOverflow
-                  ? `<a href="https://stackoverflow.com/users/${employee.stackOverflow}"><img class="icon" src="icons/stackoverflow.svg" alt="Stackoverflow logo"></a>`
+                  ? `<a href="https://stackoverflow.com/users/${employee.stackOverflow}" target="_blank"><img class="icon"
+                  src="icons/stackoverflow.svg" alt="Stackoverflow logo"></a>`
                   : ""
               }
               ${
                 employee.linkedIn
-                  ? `<a href="https://www.linkedin.com${employee.linkedIn}"><img class="icon" src="icons/linkedin.svg" alt="Linkedin logo"></a>`
+                  ? `<a href="https://www.linkedin.com${employee.linkedIn}" target="_blank"><img class="icon" src="icons/linkedin.svg"
+                  alt="Linkedin logo"></a>`
                   : ""
               }
             </div>
-        </div>`;
+            
+          </div>
+        `;
       });
     };
 
@@ -71,12 +99,7 @@ fetch("https://api.tretton37.com/ninjas")
     };
 
     const resetFilters = () => {
-      filteredEmployeeList = employeeList;
-      checkboxValues.forEach((checkbox) => {
-        checkbox.checked = false;
-      });
-      cityPick.selectedIndex = 0;
-      showEmployees(employeeList);
+      location.reload();
     };
 
     const filterBySocialMedia = () => {
