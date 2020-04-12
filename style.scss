@@ -8,7 +8,7 @@ body {
   align-items: center;
 
   display: flex;
-  // min-height: 100vh;
+  min-height: 100vh;
   flex-direction: column;
 
   background-color: #80c564;
@@ -96,6 +96,7 @@ header {
 .main-content {
   width: 85%;
   margin-bottom: 30px;
+  float: 1;
 }
 
 .sorting-container {
