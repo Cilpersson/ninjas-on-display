@@ -9,9 +9,7 @@ const stackoverflow = document.getElementById("stackOverflow");
 const filterButton = document.getElementById("filter-button");
 const resetButton = document.getElementById("reset-button");
 
-const checkboxValues = [github, twitter, linkedin, stackoverflow];
-
-const loader = `<div class="loading-container"><div class="loader"><img class="loading-shuriken" src="./icons/shuriken.svg"></div></div>`;
+const loader = `<div class="loading-container"><div class="loader"><img class="loading-shuriken" src="./icons/shuriken.svg" alt="Shuriken"></div></div>`;
 
 employeeContainer.innerHTML = loader;
 fetch("https://api.tretton37.com/ninjas")
@@ -28,7 +26,6 @@ fetch("https://api.tretton37.com/ninjas")
         employeeContainer.innerHTML += `
         
           <div tabindex="0" class="employee-card">
-          
             <div class="employee-info">
               <div class="employee-wrapper">
                 <img class="profile-picture" src=${
@@ -103,6 +100,7 @@ fetch("https://api.tretton37.com/ninjas")
 
     const filterBySocialMedia = () => {
       if (github.checked) {
+        console.log(github.value);
         filteredEmployeeList = filteredEmployeeList.filter(
           (employee) => employee.gitHub !== null
         );
