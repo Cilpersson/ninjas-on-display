@@ -10,7 +10,7 @@ I did not manage to make the site work in IE. At first I thought the issue was t
 
 I'm really pleased with the design. I tried to make something that not only represented tretton37 colour and style wise but also represented me. I have a weak spot for both borders and border-radius which are recurrent on the page.
 
-I'm also please with the fact that it's tabbable, including the animations.
+I'm also pleased with the fact that it's tabbable, including the animations.
 
 ## Overall
 
