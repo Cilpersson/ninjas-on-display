@@ -8,7 +8,7 @@ body {
   align-items: center;
 
   display: flex;
-  min-height: 100vh;
+  // min-height: 100vh;
   flex-direction: column;
 
   background-color: #80c564;
@@ -294,10 +294,6 @@ select:active {
 
 .mini-icon:hover {
   transform: scale(1.1);
-}
-
-.filler {
-  flex: 1;
 }
 
 footer {
