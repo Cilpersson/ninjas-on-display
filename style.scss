@@ -96,7 +96,6 @@ header {
 .main-content {
   width: 85%;
   margin-bottom: 30px;
-  flex: 1;
 }
 
 .sorting-container {
@@ -295,6 +294,10 @@ select:active {
 
 .mini-icon:hover {
   transform: scale(1.1);
+}
+
+.filler {
+  flex: 1;
 }
 
 footer {
