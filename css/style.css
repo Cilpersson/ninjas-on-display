@@ -245,11 +245,7 @@ select:active {
 }
 
 .employee-container {
-  display: -ms-grid;
-  display: grid;
   gap: 20px;
-  -ms-grid-columns: 1fr;
-      grid-template-columns: 1fr;
 }
 
 .employee-card {
@@ -257,6 +253,7 @@ select:active {
   font-weight: lighter;
   border: 4px solid #80c565;
   padding: 5px;
+  margin: 10px 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -420,9 +417,22 @@ footer span {
   h1 {
     font-size: 65px;
   }
+  .employee-card {
+    width: 45%;
+  }
   .employee-container {
-    -ms-grid-columns: 1fr 1fr;
-        grid-template-columns: 1fr 1fr;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
   }
   .loading-container {
     width: 87vw;
@@ -458,9 +468,8 @@ footer span {
   .main-content {
     width: 75%;
   }
-  .employee-container {
-    -ms-grid-columns: 1fr 1fr 1fr;
-        grid-template-columns: 1fr 1fr 1fr;
+  .employee-card {
+    width: 30%;
   }
   .loading-container {
     width: 75vw;

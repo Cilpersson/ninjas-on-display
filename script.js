@@ -1,17 +1,16 @@
 const employeeContainer = document.getElementById("employee-container");
 const cityPick = document.querySelector(".office");
+
 const github = document.getElementById("gitHub");
 const twitter = document.getElementById("twitter");
 const linkedin = document.getElementById("linkedIn");
 const stackoverflow = document.getElementById("stackOverflow");
-// const lund = document.getElementById("lund");
-// const helsingborg = document.getElementById("helsingborg");
-// const borlange = document.getElementById("borlange");
-// const stockholm = document.getElementById("stockholm");
-// const ljubljana = document.getElementById("ljubljana");
+
 const filterButton = document.getElementById("filter-button");
 const resetButton = document.getElementById("reset-button");
+
 const checkboxValues = [github, twitter, linkedin, stackoverflow];
+
 const loader = `<div class="loading-container"><div class="loader"><img class="loading-shuriken" src="./icons/shuriken.svg"></div></div>`;
 
 employeeContainer.innerHTML = loader;
