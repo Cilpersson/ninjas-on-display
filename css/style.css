@@ -375,17 +375,20 @@ footer {
 }
 
 .main-p-footer {
+  text-align: center;
   font-size: 18px;
   font-weight: lighter;
   margin: 0;
 }
 
 .small-p-footer {
+  text-align: center;
   display: inline;
   margin: 0;
 }
 
 .small-p-footer a {
+  text-align: center;
   font-weight: bolder;
   display: inline;
   text-decoration: none;
