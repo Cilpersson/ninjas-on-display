@@ -309,6 +309,7 @@ select:active {
 }
 
 .employee-contacts {
+  height: 75px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
