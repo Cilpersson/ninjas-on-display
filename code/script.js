@@ -6,6 +6,8 @@ const twitter = document.getElementById("twitter");
 const linkedin = document.getElementById("linkedIn");
 const stackoverflow = document.getElementById("stackOverflow");
 
+const checkboxes = [github, twitter, linkedin, stackoverflow];
+
 const filterButton = document.getElementById("filter-button");
 const resetButton = document.getElementById("reset-button");
 
@@ -85,6 +87,11 @@ fetch("https://api.tretton37.com/ninjas")
     };
 
     const filterByOffice = () => {
+      checkboxes.forEach((checkbox) => {
+        if (checkbox.value) {
+          checkbox.checked = false;
+        }
+      });
       filteredEmployeeList = employeeList.filter(
         (employee) => employee.office === cityPick.value
       );
