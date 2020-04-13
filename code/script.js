@@ -16,19 +16,20 @@ const loader = `<div class="loading-container"><div class="loader"><img class="l
 let employeeList;
 let filteredEmployeeList;
 
-const xmlhttp = new XMLHttpRequest();
+const xhr = new XMLHttpRequest();
 const url = "https://api.tretton37.com/ninjas";
 
-xmlhttp.onreadystatechange = function () {
+xhr.onload = function () {
   employeeContainer.innerHTML = loader;
-  if (this.readyState == 4 && this.status == 200) {
+  if (xhr.status >= 200 && xhr.status < 300) {
+    console.log("hej");
     employeeList = JSON.parse(this.responseText);
     filteredEmployeeList = employeeList;
     showEmployees(employeeList);
   }
 };
-xmlhttp.open("GET", url, true);
-xmlhttp.send();
+xhr.open("GET", url);
+xhr.send();
 
 const showEmployees = (employees) => {
   employeeContainer.innerHTML = "";
