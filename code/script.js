@@ -16,22 +16,22 @@ const loader = `<div class="loading-container"><div class="loader"><img class="l
 let employeeList;
 let filteredEmployeeList;
 
+employeeContainer.innerHTML = loader;
+
 const xhr = new XMLHttpRequest();
 
 let url = "https://api.tretton37.com/ninjas/";
 
 url = `${url}?t=${new Date().getTime()}`;
-console.log(url);
 
 xhr.onreadystatechange = function () {
-  employeeContainer.innerHTML = loader;
   if (xhr.readyState == 4 && xhr.status == 200) {
     employeeList = JSON.parse(this.responseText);
     filteredEmployeeList = employeeList;
     showEmployees(employeeList);
   }
 };
-xhr.open("GET", url);
+xhr.open("GET", url, true);
 xhr.send();
 
 const showEmployees = (employees) => {
