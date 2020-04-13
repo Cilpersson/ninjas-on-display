@@ -24,7 +24,7 @@ let url = "https://api.tretton37.com/ninjas/";
 
 url = `${url}?t=${new Date().getTime()}`;
 
-xhr.onreadystatechange = function () {
+xhr.onload = function () {
   if (xhr.readyState == 4 && xhr.status == 200) {
     employeeList = JSON.parse(this.responseText);
     filteredEmployeeList = employeeList;
