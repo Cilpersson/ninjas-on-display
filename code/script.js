@@ -6,24 +6,35 @@ const twitter = document.getElementById("twitter");
 const linkedin = document.getElementById("linkedIn");
 const stackoverflow = document.getElementById("stackOverflow");
 
+const checkboxes = [github, twitter, linkedin, stackoverflow];
+
 const filterButton = document.getElementById("filter-button");
 const resetButton = document.getElementById("reset-button");
 
 const loader = `<div class="loading-container"><div class="loader"><img class="loading-shuriken" src="./icons/shuriken.svg" alt="Shuriken"></div></div>`;
 
-employeeContainer.innerHTML = loader;
-fetch("https://api.tretton37.com/ninjas")
-  .then((res) => {
-    return res.json();
-  })
-  .then((json) => {
-    let employeeList = json;
-    let filteredEmployeeList = json;
+let employeeList;
+let filteredEmployeeList;
 
-    const showEmployees = (employees) => {
-      employeeContainer.innerHTML = "";
-      employees.forEach((employee) => {
-        employeeContainer.innerHTML += `
+const xmlhttp = new XMLHttpRequest();
+const url = "https://api.tretton37.com/ninjas";
+
+xmlhttp.onreadystatechange = function () {
+  employeeContainer.innerHTML = loader;
+  if (this.readyState == 4 && this.status == 200) {
+    employeeList = JSON.parse(this.responseText);
+    filteredEmployeeList = employeeList;
+    showEmployees(employeeList);
+  }
+};
+xmlhttp.open("GET", url, true);
+xmlhttp.send();
+
+const showEmployees = (employees) => {
+  employeeContainer.innerHTML = "";
+  if (employees) {
+    employees.forEach((employee) => {
+      employeeContainer.innerHTML += `
         
           <div tabindex="0" class="employee-card">
             <div class="employee-info">
@@ -81,56 +92,62 @@ fetch("https://api.tretton37.com/ninjas")
             
           </div>
         `;
-      });
-    };
+    });
+  }
+};
 
-    const filterByOffice = () => {
-      filteredEmployeeList = employeeList.filter(
-        (employee) => employee.office === cityPick.value
-      );
-      filteredEmployeeList = filteredEmployeeList.sort((a, b) =>
-        a.name.localeCompare(b.name)
-      );
-      showEmployees(filteredEmployeeList);
-    };
-
-    const resetFilters = () => {
-      location.reload();
-    };
-
-    const filterBySocialMedia = () => {
-      if (github.checked) {
-        console.log(github.value);
-        filteredEmployeeList = filteredEmployeeList.filter(
-          (employee) => employee.gitHub !== null
-        );
-      }
-      if (twitter.checked) {
-        filteredEmployeeList = filteredEmployeeList.filter(
-          (employee) => employee.twitter !== null
-        );
-      }
-      if (linkedin.checked) {
-        filteredEmployeeList = filteredEmployeeList.filter(
-          (employee) => employee.linkedIn !== null
-        );
-      }
-      if (stackoverflow.checked) {
-        filteredEmployeeList = filteredEmployeeList.filter(
-          (employee) => employee.stackOverflow !== null
-        );
-      }
-      filteredEmployeeList = filteredEmployeeList.sort((a, b) =>
-        a.name.localeCompare(b.name)
-      );
-      showEmployees(filteredEmployeeList);
-    };
-
-    if (cityPick) {
-      cityPick.addEventListener("change", filterByOffice);
+const filterByOffice = () => {
+  checkboxes.forEach((checkbox) => {
+    console.log("hej");
+    if (checkbox.value) {
+      checkbox.checked = false;
     }
-    filterButton.addEventListener("click", filterBySocialMedia);
-    resetButton.addEventListener("click", resetFilters);
-
-    showEmployees(employeeList);
   });
+  filteredEmployeeList = employeeList.filter(
+    (employee) => employee.office === cityPick.value
+  );
+  filteredEmployeeList = filteredEmployeeList.sort((a, b) =>
+    a.name.localeCompare(b.name)
+  );
+
+  showEmployees(filteredEmployeeList);
+};
+
+const resetFilters = () => {
+  location.reload();
+};
+
+const filterBySocialMedia = () => {
+  if (github.checked) {
+    filteredEmployeeList = filteredEmployeeList.filter(
+      (employee) => employee.gitHub !== null
+    );
+  }
+  if (twitter.checked) {
+    filteredEmployeeList = filteredEmployeeList.filter(
+      (employee) => employee.twitter !== null
+    );
+  }
+  if (linkedin.checked) {
+    filteredEmployeeList = filteredEmployeeList.filter(
+      (employee) => employee.linkedIn !== null
+    );
+  }
+  if (stackoverflow.checked) {
+    filteredEmployeeList = filteredEmployeeList.filter(
+      (employee) => employee.stackOverflow !== null
+    );
+  }
+  filteredEmployeeList = filteredEmployeeList.sort((a, b) =>
+    a.name.localeCompare(b.name)
+  );
+  showEmployees(filteredEmployeeList);
+};
+
+if (cityPick) {
+  cityPick.addEventListener("change", filterByOffice);
+}
+filterButton.addEventListener("click", filterBySocialMedia);
+resetButton.addEventListener("click", resetFilters);
+
+showEmployees(employeeList);

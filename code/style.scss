@@ -199,13 +199,13 @@ select:active {
 }
 
 .employee-container {
-  display: grid;
-  gap: 20px;
-  grid-template-columns: 1fr;
+  display: flex;
+  flex-direction: column-reverse;
+  flex-wrap: wrap;
 }
 
 .employee-card {
-  height: 120px;
+  // height: 135px;
   font-weight: lighter;
   border: 4px solid #80c565;
   padding: 5px;
@@ -217,6 +217,7 @@ select:active {
   background: #e4e4e4;
   color: #012c55;
   transition: 0.4s ease-in;
+  width: 96%;
 }
 
 .employee-wrapper {
@@ -230,7 +231,7 @@ select:active {
   flex-direction: column;
   justify-content: space-evenly;
   transition: 0.5s ease-in;
-  height: 60px;
+  // height: 60px;
 }
 
 .phone-nbr {
@@ -332,7 +333,12 @@ footer span {
   }
 
   .employee-container {
-    grid-template-columns: 1fr 1fr;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .employee-card {
+    width: 45%;
   }
 
   .loading-container {
@@ -362,8 +368,8 @@ footer span {
     width: 75%;
   }
 
-  .employee-container {
-    grid-template-columns: 1fr 1fr 1fr;
+  .employee-card {
+    width: 30%;
   }
 
   .loading-container {

@@ -245,15 +245,18 @@ select:active {
 }
 
 .employee-container {
-  display: -ms-grid;
-  display: grid;
-  gap: 20px;
-  -ms-grid-columns: 1fr;
-      grid-template-columns: 1fr;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .employee-card {
-  height: 120px;
   font-weight: lighter;
   border: 4px solid #80c565;
   padding: 5px;
@@ -271,6 +274,7 @@ select:active {
   color: #012c55;
   -webkit-transition: 0.4s ease-in;
   transition: 0.4s ease-in;
+  width: 96%;
 }
 
 .employee-wrapper {
@@ -297,7 +301,6 @@ select:active {
           justify-content: space-evenly;
   -webkit-transition: 0.5s ease-in;
   transition: 0.5s ease-in;
-  height: 60px;
 }
 
 .phone-nbr {
@@ -422,8 +425,16 @@ footer span {
     font-size: 65px;
   }
   .employee-container {
-    -ms-grid-columns: 1fr 1fr;
-        grid-template-columns: 1fr 1fr;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .employee-card {
+    width: 45%;
   }
   .loading-container {
     width: 87vw;
@@ -459,9 +470,8 @@ footer span {
   .main-content {
     width: 75%;
   }
-  .employee-container {
-    -ms-grid-columns: 1fr 1fr 1fr;
-        grid-template-columns: 1fr 1fr 1fr;
+  .employee-card {
+    width: 30%;
   }
   .loading-container {
     width: 75vw;
