@@ -22,4 +22,8 @@ I have tried some more things in an attempt to make the site working in IE but s
 
 ### View it live
 
+Works until 13/4
 https://ninjas-on-display.netlify.com/
+
+Should work from 14/4 (Netlify changes their domain on April 14th)=>
+https://ninjas-on-display.netlify.app
