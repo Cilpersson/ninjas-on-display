@@ -224,6 +224,12 @@ select:active {
   flex-direction: row;
 }
 
+.employee-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
 .employee-contacts {
   display: flex;
   color: #012c55;
