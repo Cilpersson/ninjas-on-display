@@ -19,12 +19,13 @@ let filteredEmployeeList;
 employeeContainer.innerHTML = loader;
 
 const xhr = new XMLHttpRequest();
-
+console.log("hej");
 let url = "https://api.tretton37.com/ninjas/";
 
 url = `${url}?t=${new Date().getTime()}`;
 
 xhr.onload = function () {
+  console.log("hej2");
   if (xhr.readyState == 4 && xhr.status == 200) {
     employeeList = JSON.parse(this.responseText);
     filteredEmployeeList = employeeList;
@@ -33,7 +34,7 @@ xhr.onload = function () {
 };
 xhr.open("GET", url, true);
 xhr.send();
-
+console.log("hej3");
 const showEmployees = (employees) => {
   employeeContainer.innerHTML = "";
   if (employees) {
