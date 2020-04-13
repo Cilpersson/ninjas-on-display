@@ -17,18 +17,21 @@ let employeeList;
 let filteredEmployeeList;
 
 const xhr = new XMLHttpRequest();
-const url = "https://api.tretton37.com/ninjas";
+
+let url = "https://api.tretton37.com/ninjas/";
+
+url = `${url}?t=${new Date().getTime()}`;
+console.log(url);
 
 xhr.onreadystatechange = function () {
   employeeContainer.innerHTML = loader;
-  if (xhr.status >= 200 && xhr.status < 300) {
-    console.log("hej");
+  if (xhr.readyState == 4 && xhr.status == 200) {
     employeeList = JSON.parse(this.responseText);
     filteredEmployeeList = employeeList;
     showEmployees(employeeList);
   }
 };
-xhr.open("POST", url);
+xhr.open("GET", url);
 xhr.send();
 
 const showEmployees = (employees) => {
