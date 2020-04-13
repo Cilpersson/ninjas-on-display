@@ -7,6 +7,7 @@ const linkedin = document.getElementById("linkedIn");
 const stackoverflow = document.getElementById("stackOverflow");
 
 const checkboxes = [github, twitter, linkedin, stackoverflow];
+let value;
 
 const filterButton = document.getElementById("filter-button");
 const resetButton = document.getElementById("reset-button");
@@ -107,7 +108,6 @@ fetch("https://api.tretton37.com/ninjas")
 
     const filterBySocialMedia = () => {
       if (github.checked) {
-        console.log(github.value);
         filteredEmployeeList = filteredEmployeeList.filter(
           (employee) => employee.gitHub !== null
         );
