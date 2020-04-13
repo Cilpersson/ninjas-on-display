@@ -429,12 +429,13 @@ footer span {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
   }
   .employee-card {
     width: 45%;
+    margin: 1%;
   }
   .loading-container {
     width: 87vw;
@@ -456,9 +457,6 @@ footer span {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
-    -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
   }
 }
 
@@ -471,7 +469,7 @@ footer span {
     width: 75%;
   }
   .employee-card {
-    width: 30%;
+    width: 29%;
   }
   .loading-container {
     width: 75vw;

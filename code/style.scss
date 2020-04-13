@@ -334,11 +334,12 @@ footer span {
 
   .employee-container {
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-start;
   }
 
   .employee-card {
     width: 45%;
+    margin: 1%;
   }
 
   .loading-container {
@@ -354,7 +355,7 @@ footer span {
   .sorting-container {
     align-items: center;
     flex-direction: row;
-    justify-content: space-evenly;
+    // justify-content: space-evenly;
   }
 }
 
@@ -369,7 +370,7 @@ footer span {
   }
 
   .employee-card {
-    width: 30%;
+    width: 29%;
   }
 
   .loading-container {

@@ -98,7 +98,6 @@ const showEmployees = (employees) => {
 
 const filterByOffice = () => {
   checkboxes.forEach((checkbox) => {
-    console.log("hej");
     if (checkbox.value) {
       checkbox.checked = false;
     }
