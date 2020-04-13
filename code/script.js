@@ -19,7 +19,7 @@ let filteredEmployeeList;
 const xhr = new XMLHttpRequest();
 const url = "https://api.tretton37.com/ninjas";
 
-xhr.onload = function () {
+xhr.onreadystatechange = function () {
   employeeContainer.innerHTML = loader;
   if (xhr.status >= 200 && xhr.status < 300) {
     console.log("hej");
@@ -28,7 +28,7 @@ xhr.onload = function () {
     showEmployees(employeeList);
   }
 };
-xhr.open("GET", url);
+xhr.open("POST", url);
 xhr.send();
 
 const showEmployees = (employees) => {
