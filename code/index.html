@@ -1,70 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="./icons/ninja.svg" />
+    <title>Ninjas on display</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
-  <link rel="icon" href="./icons/ninja.svg">
-  <title>Ninjas on display</title>
-</head>
+  <body>
+    <header>
+      <h1>THE NINJAS</h1>
+      <img
+        tabindex="0"
+        class="header-image"
+        src="./icons/ninja.svg"
+        alt="Ninja"
+      />
+      <img class="header-image2" src="./icons/shuriken.svg" alt="Shuriken" />
+    </header>
+    <section class="main-content">
+      <section class="sorting-container" id="sorting-container">
+        <select id="office" class="office">
+          <option value="none">Select office</option>
+          <option value="Lund">LUND</option>
+          <option value="Helsingborg">HELSINGBORG</option>
+          <option value="Stockholm">STOCKHOLM</option>
+          <option value="Borlänge">BORLÄNGE</option>
+          <option value="Ljubljana">LJUBLJANA</option>
+        </select>
 
-<body>
+        <div class="checkbox-wrapper">
+          <label class="social-media-container" for="gitHub"
+            ><input
+              class="social-media"
+              type="checkbox"
+              id="gitHub"
+              value="gitHub"
+            />GITHUB</label
+          >
+          <label class="social-media-container" for="twitter"
+            ><input
+              class="social-media"
+              type="checkbox"
+              id="twitter"
+              value="twitter"
+            />TWITTER</label
+          >
+          <label class="social-media-container" for="linkedIn"
+            ><input
+              class="social-media"
+              type="checkbox"
+              id="linkedIn"
+              value="linkedIn"
+            />LINKEDIN</label
+          >
+          <label class="social-media-container" for="stackOverflow"
+            ><input
+              class="social-media"
+              type="checkbox"
+              id="stackOverflow"
+              value="stackOverflow"
+            />STACKOVERFLOW</label
+          >
+        </div>
 
-
-  <header>
-
-    <h1>THE NINJAS</h1>
-    <img tabindex="0" class="header-image" src="./icons/ninja.svg" alt="Ninja">
-    <img class="header-image2" src="./icons/shuriken.svg" alt="Shuriken">
-  </header>
-  <section class="main-content">
-    <section class="sorting-container" id="sorting-container">
-
-      <select id="office" class="office">
-        <option value="none">Select office</option>
-        <option value="Lund">LUND</option>
-        <option value="Helsingborg">HELSINGBORG</option>
-        <option value="Stockholm">STOCKHOLM</option>
-        <option value="Borlänge">BORLÄNGE</option>
-        <option value="Ljubljana">LJUBLJANA</option>
-      </select>
-
-      <div class="checkbox-wrapper">
-        <label class="social-media-container" for="gitHub"><input class="social-media" type="checkbox" id="gitHub"
-            value="gitHub">GITHUB</label>
-        <label class="social-media-container" for="twitter"><input class="social-media" type="checkbox" id="twitter"
-            value="twitter">TWITTER</label>
-        <label class="social-media-container" for="linkedIn"><input class="social-media" type="checkbox" id="linkedIn"
-            value="linkedIn">LINKEDIN</label>
-        <label class="social-media-container" for="stackOverflow"><input class="social-media" type="checkbox"
-            id="stackOverflow" value="stackOverflow">STACKOVERFLOW</label>
-      </div>
-
-
-      <div class="button-wrapper">
-        <button class="all-buttons" id="filter-button">Filter</button>
-        <button class="all-buttons" id="reset-button">Reset</button>
-      </div>
-
+        <div class="button-wrapper">
+          <button class="all-buttons" id="filter-button">Filter</button>
+          <button class="all-buttons" id="reset-button">Reset</button>
+        </div>
+      </section>
+      <section id="employee-container" class="employee-container"></section>
     </section>
-    <section id="employee-container" class="employee-container"></section>
-  </section>
-  <footer>
-    <p class="main-p-footer">Christina Persson 2020</p>
+    <footer>
+      <p class="main-p-footer">Christina Persson 2020</p>
 
-    <p class="small-p-footer">Icons made by <a href="https://www.flaticon.com/authors/dave-gandy"
-        title="Dave Gandy">Dave Gandy</a>,
-      <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a>, <a
-        href="https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect">Pixel perfect</a> and<a
-        href="https://www.flaticon.com/authors/eucalyp" title="Eucalyp"> Eucalyp</a>, all from <a
-        href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
-    </p>
-  </footer>
-  <!-- <script src="https://unpkg.com/unfetch/polyfill"></script> -->
-  <script type="module" src="script.js"></script>
-
-</body>
-
+      <p class="small-p-footer">
+        Icons made by
+        <a href="https://www.flaticon.com/authors/dave-gandy" title="Dave Gandy"
+          >Dave Gandy</a
+        >,
+        <a href="https://www.flaticon.com/authors/freepik" title="Freepik"
+          >Freepik</a
+        >,
+        <a
+          href="https://www.flaticon.com/authors/pixel-perfect"
+          title="Pixel perfect"
+          >Pixel perfect</a
+        >
+        and<a href="https://www.flaticon.com/authors/eucalyp" title="Eucalyp">
+          Eucalyp</a
+        >, all from
+        <a href="https://www.flaticon.com/" title="Flaticon">
+          www.flaticon.com</a
+        >
+      </p>
+    </footer>
+    <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
+    <script src="https://github.com/github/fetch/releases/download/v3.0.0/fetch.umd.js"></script>
+    <script src="script.js"></script>
+  </body>
 </html>
