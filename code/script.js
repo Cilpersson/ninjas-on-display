@@ -12,7 +12,11 @@ let value;
 const filterButton = document.getElementById("filter-button");
 const resetButton = document.getElementById("reset-button");
 
-const loader = `<div class="loading-container"><div class="loader"><img class="loading-shuriken" src="./icons/shuriken.svg" alt="Shuriken"></div></div>`;
+const loader = `<div class="loading-container">
+                  <div class="loader">
+                    <img class="loading-shuriken" src="./icons/shuriken.svg" alt="Shuriken">
+                  </div>
+                </div>`;
 
 employeeContainer.innerHTML = loader;
 fetch("https://api.tretton37.com/ninjas")
@@ -81,7 +85,6 @@ fetch("https://api.tretton37.com/ninjas")
                   : ""
               }
             </div>
-            
           </div>
         `;
       });
@@ -104,6 +107,8 @@ fetch("https://api.tretton37.com/ninjas")
 
     const resetFilters = () => {
       location.reload();
+      // employeeContainer.innerHTML = loader;
+      // showEmployees(employeeList);
     };
 
     const filterBySocialMedia = () => {
