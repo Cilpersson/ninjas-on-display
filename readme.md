@@ -1,6 +1,6 @@
 # What is this?
 
-This is a one page website displaying the employees of tretton37, it's also a code test provided by said company.
+This is a one page website displaying the employees of a company.
 
 ## Issues
 
